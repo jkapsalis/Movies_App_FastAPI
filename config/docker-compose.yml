@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: database
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  fastapi:
+    container_name: fastapi
+    build:
+      context: .
+      dockerfile: Dockerfile  # Βεβαιώσου ότι το όνομα του Dockerfile είναι σωστό
+    depends_on:
+      - db
+    ports:
+      - "8800:80"  # Ανάλογα με την πόρτα που εκθέτεις στο FastAPI (στη θέση του 80)
+    environment:
+      DATABASE_URL: postgres://admin:password@db/database
+    networks:
+      - app-network
+
+volumes:
+  postgres_data:
+
+networks:
+  app-network:
+    driver: bridge

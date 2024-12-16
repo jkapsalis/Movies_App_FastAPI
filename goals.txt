@@ -1,0 +1,32 @@
+Στόχοι για το θέμα "Movies"
+1 Get all users
+Επιστρέφει όλους τους χρήστες που έχουν λογαριασμό στην πλατφόρμα.
+Endpoint: GET /users/
+
+Create a new user
+2 Δημιουργεί έναν νέο χρήστη στην πλατφόρμα.
+Endpoint: POST /users/
+
+3 Get a user by ID
+Επιστρέφει πληροφορίες για έναν συγκεκριμένο χρήστη βάσει του ID του.
+Endpoint: GET /users/{user_id}
+
+4 Create a new movie
+Προσθέτει μια νέα ταινία στη βάση δεδομένων.
+Endpoint: POST /movies/
+
+5 Get all movies
+Επιστρέφει όλες τις ταινίες που είναι διαθέσιμες.
+Endpoint: GET /movies/
+
+6 Get a movie by ID
+Επιστρέφει λεπτομέρειες για μια συγκεκριμένη ταινία βάσει του ID της.
+Endpoint: GET /movies/{movie_id}
+
+7 Create a new booking or review
+Δημιουργεί μια νέα κράτηση για προβολή ταινίας ή μια νέα αξιολόγηση για μια ταινία.
+Endpoint: POST /bookings/ ή POST /reviews/
+
+8 Get all bookings or reviews
+Επιστρέφει όλες τις κρατήσεις ή αξιολογήσεις χρηστών.
+Endpoint: GET /bookings/ ή GET /reviews/
